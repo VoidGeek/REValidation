@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Result</title> <!-- Moved title inside head -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .valid {
+            color: green;
+        }
+        .invalid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><h1>Validation Result</h1></center> <!-- Added center header -->
+        {% if password_valid is defined %}
+            <p>Password is {% if password_valid %}<span class="valid">valid</span>{% else %}<span class="invalid">invalid</span>{% endif %}.</p>
+        {% endif %}
+
+        {% if email_valid is defined %}
+            <p>Email and password is {% if email_valid %}<span class="valid">valid</span>{% else %}<span class="invalid">invalid</span>{% endif %}.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
